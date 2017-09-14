@@ -3,21 +3,13 @@ require "sinatra/reloader" if development?
 
 
 enable :sessions
-#session["user_guess"] = 0
-# total_users = 0
 n = rand 1..10
 
 get '/' do
-  # if session[“user_guess”].nil?
-    #  session[“user_guess”] = 0
-  #  end
-  #total_users = 0
-
   "Guess a number between 1 and 10......Ready......Set......GO"
 end
 
 get '/:guess' do
-  #total_users += 1
 
   if session["user_guess"].nil?
      session["user_guess"] = 0
