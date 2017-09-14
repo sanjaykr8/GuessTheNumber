@@ -23,7 +23,7 @@ get '/:guess' do
      session["user_guess"] = 0
   end
 
-  if session["user_guess"] < 2
+  if session["user_guess"] <= 2
     if params[:guess].to_i == n
       return "You Won!!"
     else
