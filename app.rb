@@ -23,6 +23,7 @@ get '/:guess' do
       return "Try again, you have #{3-session["user_guess"]} chances"
     end
   else
-    return "Game Over!!!, the correct guess is #{n}"
+    session[:failedCounter] += 1
+    return "Game Over!!!, the correct guess is #{n}. Total number of failed attempts are #{session[:failedCounter].to_s} "
   end
 end
