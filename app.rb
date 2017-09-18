@@ -15,19 +15,19 @@ get '/:guess' do
      session[:attempt] = 0
   end
 
-    if session[:attempt] < 3
+  if session[:attempt] < 3
 
-            session[:attempt] += 1
-            if params[:guess].to_i == n
-              return "You Won!!"
+          session[:attempt] += 1
+          if params[:guess].to_i == n
+            return "You Won!!"
 
-            else
-              remainingAttempts = 3 - session[:attempt].to_i
-              return "Try again, you have #{remainingAttempts} more attempts"
-            end
+          else
+            remainingAttempts = 3 - session[:attempt].to_i
+            return "Try again, you have #{remainingAttempts} more attempts"
+          end
 
-    else
-      return "Game Over!!!, the correct guess is #{n}."
+  else
+    return "Game Over!!!, the correct guess is #{n}."
   end
 
 end
