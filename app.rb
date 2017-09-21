@@ -22,7 +22,7 @@ get '/:guess' do
             return "You Won!!"
 
           else
-            remainingAttempts = 3 - session[:attempt].to_i
+            remainingAttempts = 4 - session[:attempt].to_i
             return "Try again, you have #{remainingAttempts} more attempts"
           end
 
