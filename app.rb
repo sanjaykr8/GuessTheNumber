@@ -15,7 +15,7 @@ get '/:guess' do
      session[:attempt] = 0
   end
 
-  if session[:attempt] < 3
+  if session[:attempt] < 4
 
           session[:attempt] += 1
           if params[:guess].to_i == n
